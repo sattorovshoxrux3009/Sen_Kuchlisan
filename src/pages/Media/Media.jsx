@@ -4,12 +4,14 @@ import media2 from "../../img/media2.png"
 import media3 from "../../img/media3.png"
 import media4 from "../../img/media4.png"
 import media5 from "../../img/media5.png"
+import { useTranslation } from 'react-i18next';
 
 function Media() {
+  const {t}=useTranslation();
   return (
     <div className="media">
       <div className="container">
-            <h1>Media</h1>
+            <h1>{t("media")}</h1>
             <ul>
                 <li>
                     <img src={media1} alt="" />

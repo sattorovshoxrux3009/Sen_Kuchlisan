@@ -6,14 +6,16 @@ import media4 from "../../img/media4.png"
 import media5 from "../../img/media5.png"
 import mediaIcon from "../../img/media-next.svg"
 import { NavLink } from "react-router-dom"
+import { useTranslation } from 'react-i18next';
 
 function Media() {
+    const {t}=useTranslation();
   return (
     <div className="mediaSection">
         <div className="container">
             <span>
-                <h1>Media</h1>
-                <NavLink to="/media">Barchasini ko’rish <img src={mediaIcon} alt="" /></NavLink>
+                <h1>{t("media")}</h1>
+                <NavLink to="/media">{t("seeAll")}<img src={mediaIcon} alt="" /></NavLink>
             </span>
             <ul>
                 <li>
