@@ -1,0 +1,216 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../../fonts/Montserrat.ttf);
+}
+.navbar{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    img{
+        width: 60px;
+        height: 38px;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        @media screen and (max-width:475px) {
+            gap: 0px;
+        }
+        li{
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            @media screen and (max-width:920px) {
+                gap: 5px;
+            }
+            h1{
+                font-family: Montserrat,sans-serif;
+                color: #0298D6;
+                font-size: 24px;
+            }
+            a{
+                @media screen and (max-width:920px) {
+                    display: none;
+                }
+                color: #475467;
+                font-weight: 600;
+                transition: 0.3s;
+                &:hover{
+                    color: #0298D6;
+                }
+            }
+            button{
+                position: relative;
+                background-color: white;
+                border: 0;
+                font-family: Inter;
+                color: #475467;
+                font-weight: 600;
+                font-size: 16px;
+                cursor: pointer;
+                transition: 0.3s;
+                display: flex;
+                align-items: center;
+                &:hover{
+                    color: #0298D6;
+                }
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            &>div{
+                @media screen and (max-width:920px) {
+                    display: none;
+                }
+                position: relative;
+            }
+        }
+    }
+    span{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        select{
+            padding: 2px 18px;
+            font-size: 16px;
+            border: none;
+            color: #475467;
+            font-weight: 800;
+            border-radius: 8px;
+        }
+        button{
+            padding: 8px;
+            background-color: #0298D6;
+            border-radius: 8px;
+            color: white;
+            border: 1px solid #0298D6;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover{
+                background-color: white;
+                color: #0298D6;
+            }   
+        }
+        @media screen and (max-width:920px) {
+            display: none;
+        }
+    }
+    .list{
+       position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 5;
+        background-color: white;  
+        border-radius: 0 0 8px 8px;
+        padding: 10px;
+        left: 15px;
+        height: 70px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    }
+    .hamburger{
+        display: none;
+        @media screen and (max-width:920px) {
+            display: block;
+        }
+    }
+}
+.navbar-mobile{
+    position: fixed;
+    z-index: 5;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    .navbar-wrapper{
+        padding: 25px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        height: 304px;
+        a{
+            color: #101828;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 40px; 
+        }
+        button{
+            line-height: 40px;
+            font-family: Inter;
+            color: #101828;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            background-color: white;
+            width: 150px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            a{
+                color: #475467;
+            }
+        }
+        select{
+            margin-left: -3px;
+            font-family: Inter;
+            font-size: 16px;
+            margin-top: 5px;
+            width: 60px;
+            border: none;
+            color: #101828;
+            font-weight: 800;
+            border-radius: 8px;
+            &:optional{
+                font-size: 16px;
+            }
+        }
+
+    }
+}
+.active{
+    .navbar-wrapper{
+        animation-name: ShowNavbar;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes ShowNavbar {
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+@-webkit-keyframes ShowNavbar{
+    from{
+        transform: translateY(-500px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
