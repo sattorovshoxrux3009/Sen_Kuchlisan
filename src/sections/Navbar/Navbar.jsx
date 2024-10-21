@@ -5,8 +5,15 @@ import { useState,useEffect } from "react"
 import toggleImg from '../../img/navbar-toggle.svg'
 import navbarBurger from '../../img/navbar-menu.svg'
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 function Navbar() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const {t,i18n}=useTranslation();
   const [language,setLanguage]=useState(localStorage.getItem("i18nextLng"))
 
@@ -29,7 +36,7 @@ function Navbar() {
             <h1>Sen kuchlisan</h1>
           </li>
           <li>
-            <NavLink to='/'>{t("aboutFond")}</NavLink>
+            <NavLink to='/about'>{t("aboutFond")}</NavLink>
             <div>
               <button onClick={()=>{toggle==false ? setToggle(true) : setToggle(false)}}>{t("ourProjects")} <img src={toggleImg} alt="" /></button>
               {toggle && 
