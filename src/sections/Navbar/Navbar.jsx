@@ -52,7 +52,7 @@ function Navbar() {
           </li>
         </ul>
         <span>
-          <a href="tel:+998901234567"><button>{t("charity")}</button></a>
+          {/* <a href="tel:+998901234567"><button>{t("charity")}</button></a> */}
           <select value={language} onChange={(e)=>setLanguage(e.target.value)}>
             <option value="uz">O'zb</option>
             <option value="ru">Ru</option>
