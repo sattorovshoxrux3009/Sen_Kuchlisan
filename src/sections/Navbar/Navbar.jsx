@@ -32,8 +32,10 @@ function Navbar() {
       <div className="container">
         <ul>
           <li>
-            <img src={logo} alt="" />
-            <h1>Sen kuchlisan</h1>
+            <NavLink to='/' className="navbar-home">
+              <img src={logo} alt="" />
+              <h1>Sen kuchlisan</h1>
+            </NavLink>
           </li>
           <li>
             <NavLink to='/about'>{t("aboutFond")}</NavLink>
@@ -62,7 +64,7 @@ function Navbar() {
     {hamburger && 
       <div className={hamburger ? "navbar-mobile active" : "navbar-mobile"}>
         <div className="navbar-wrapper">
-          <NavLink onClick={()=>{setHamburger(false)}} to='/'>{t("aboutFond")}</NavLink>
+          <NavLink onClick={()=>{setHamburger(false)}} to='/about'>{t("aboutFond")}</NavLink>
           <button onClick={()=>{toggle==false ? setToggle(true) : setToggle(false)}}>{t("ourProjects")}<img src={toggleImg} alt="" /></button>
           {toggle && 
             <div className="list">
